@@ -1,7 +1,9 @@
 import todoService from "../Services/TodoService.js";
 
 //TODO Create the draw function
-function _drawTodos() { }
+function _drawTodos() {
+
+}
 
 export default class TodoController {
   constructor() {
@@ -16,16 +18,20 @@ export default class TodoController {
       console.error(error)
     }
   }
-  addTodo(e) {
-    e.preventDefault();
-    var form = e.target;
-    //TODO build the todo object from the data that comes into this method
-    var todo = {};
+  addTodo() {
+    window.event.preventDefault();
+    var form = window.event.target;
+
+    var todo = {
+      description: form['description'].value
+    };
     try {
       todoService.addTodo(todo);
     } catch (error) {
       console.error(error)
     }
+    // @ts-ignore
+    form.reset()
   }
 
   /**
