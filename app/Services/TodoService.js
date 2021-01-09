@@ -25,6 +25,7 @@ class TodoService {
   }
 
   async toggleTodoStatus(todoId) {
+    let temp = ProxyState.todos
     let todo = await ProxyState.todos.find(todo => todo.id == todoId);
     //TODO Make sure that you found a todo, DONE
     //		and if you did find one DONE
@@ -35,17 +36,17 @@ class TodoService {
       todo.completed = false
     }
     console.log(todo.completed)
+    // NOTE trying to tie the .completed attribute to the checkbox.
+    // if (todo.completed == false) {
 
-    if (todo.completed == false) {
-
-    }
+    // }
 
 
     let res = await api.put(url + todoId, todo);
     //TODO how do you trigger this change
+    ProxyState.todos = temp
 
-
-    this.getTodos()
+    // this.getTodos()
 
   }
 
@@ -54,7 +55,6 @@ class TodoService {
     //		what is the request type DONE
     //		once the response comes back, how do you update the state DONE
     let res = await api.delete(url + todoId)
-    console.log(res)
 
     ProxyState.todos = ProxyState.todos.filter(todo => todo.id != todoId)
   }
