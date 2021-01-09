@@ -59,6 +59,7 @@ export default class TodoController {
    * @param {string} todoId 
    */
   removeTodo(todoId) {
+    console.log(todoId)
     try {
       todoService.removeTodo(todoId);
     } catch (error) {

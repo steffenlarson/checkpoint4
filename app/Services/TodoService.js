@@ -12,13 +12,13 @@ class TodoService {
 
     console.log(res.data);
 
-    //TODO Handle this response from the server
+    //TODO Handle this response from the server DONE
     ProxyState.todos = res.data.map(u => new Todo(u))
   }
 
   async addTodo(todo) {
     let res = await api.post(url, todo);
-    //TODO Handle this response from the server
+    //TODO Handle this response from the server DONE
     ProxyState.todos = [...ProxyState.todos, new Todo(res.data)]
     console.log(res.data)
 
@@ -35,9 +35,13 @@ class TodoService {
   }
 
   async removeTodo(todoId) {
-    //TODO Work through this one on your own
-    //		what is the request type
-    //		once the response comes back, how do you update the state
+    //TODO Work through this one on your own DONE
+    //		what is the request type DONE
+    //		once the response comes back, how do you update the state DONE
+    let res = await api.delete(url + todoId)
+    console.log(res)
+
+    ProxyState.todos = ProxyState.todos.filter(todo => todo.id != todoId)
   }
 }
 
