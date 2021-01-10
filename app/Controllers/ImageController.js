@@ -5,6 +5,12 @@ import imageService from "../Services/ImageService.js";
 
 
 function _drawImages() {
+  // TODO need to grab the variable of this.url to plug into this document.getElementById
+
+
+  // let images = ProxyState.image
+  // let template = ''
+  // template += Image.Template
   document.getElementById("background").style.backgroundImage = "url(https://w.wallhaven.cc/full/72/wallhaven-7232p9.jpg)"
 }
 

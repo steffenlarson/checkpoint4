@@ -9,7 +9,9 @@ class ImageService {
 
     let res = await api.get('images');
     ProxyState.image = new Image(res.data)
+    console.log(res.data)
   }
+
 }
 
 const imageService = new ImageService();
