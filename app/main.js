@@ -1,4 +1,5 @@
 import ImageController from "./Controllers/ImageController.js";
+import QuoteController from "./Controllers/QuoteController.js";
 import TodoController from "./Controllers/TodoController.js";
 import WeatherController from "./Controllers/WeatherController.js";
 
@@ -9,6 +10,7 @@ class App {
     this.weatherController = new WeatherController();
     this.todoController = new TodoController();
     this.imageController = new ImageController();
+    this.quoteController = new QuoteController();
 
   }
 }

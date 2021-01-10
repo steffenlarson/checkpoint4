@@ -10696,3 +10696,14 @@ main {
 }
 
 /*# sourceMappingURL=main.css.map */
+
+
+
+.hide {
+  display: none
+}
+
+.hoverable:hover + .hide {
+  display:block
+  
+}
