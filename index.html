@@ -13,31 +13,53 @@
   <main class="container-fluid">
     <div id="app">
 
-      <section class="weather-card">
-        <div class="text-center m-3">
-          <h2>Weather:</h2>
-          <div id="weather">
+      <section class="images-space">
+        <div class="background-image" id="background">
+
+          <div class="row justify-content-center m-3">
+            <div class="col-4">
+              <section class="weather-card">
+                <div class="text-center m-5">
+                  <h2>Weather:</h2>
+                  <div id="weather">
+                  </div>
+                </div>
+              </section>
+            </div>
           </div>
+
+          <div class="row justify-content-center m-3">
+            <div class="col-4">
+              <section class="todo-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title text-center">My List</h4>
+                    <ul id="todo-list">
+
+                    </ul>
+                    <form onsubmit="app.todoController.addTodo()">
+                      <input type="text" id="description" required><button type="submit">add</button>
+                    </form>
+                  </div>
+                </div>
+              </section>
+
+            </div>
+
+          </div>
+
+
+
         </div>
       </section>
 
-      <section class="todo-card">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title text-center">My List</h4>
-            <ul id="todo-list">
 
-            </ul>
-            <form onsubmit="app.todoController.addTodo()">
-              <input type="text" id="description" required><button type="submit">add</button>
-            </form>
-          </div>
-        </div>
-      </section>
+
 
     </div>
-
   </main>
+
+
   <footer class="container-fluid bg-transparent text-light">
     <div class="row text-center">
       <div class="col">
@@ -45,6 +67,9 @@
       </div>
     </div>
   </footer>
+
+
+
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="app/main.js" type="module"></script>
 </body>

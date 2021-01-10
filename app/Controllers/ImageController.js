@@ -1,11 +1,11 @@
 
 //TODO Create methods for constructor, and rendering the image to the page
-
 import { ProxyState } from "../AppState.js";
+import imageService from "../Services/ImageService.js";
 
 
 function _drawImages() {
-
+  document.getElementById("background").style.backgroundImage = "url(https://w.wallhaven.cc/full/72/wallhaven-7232p9.jpg)"
 }
 
 
@@ -13,12 +13,19 @@ function _drawImages() {
 export default class ImageController {
   constructor() {
 
-    ProxyState.on("images", _drawImages())
+    ProxyState.on("image", _drawImages)
+    this.getImage()
   }
 
 
   getImage() {
 
+    try {
+      imageService.getImage()
+    }
+    catch (error) {
+      console.error(error)
+    }
 
   }
 
