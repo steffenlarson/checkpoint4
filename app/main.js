@@ -1,3 +1,4 @@
+import ImageController from "./Controllers/ImageController.js";
 import TodoController from "./Controllers/TodoController.js";
 import WeatherController from "./Controllers/WeatherController.js";
 
@@ -7,6 +8,8 @@ class App {
   constructor() {
     this.weatherController = new WeatherController();
     this.todoController = new TodoController();
+    this.imageController = new ImageController();
+
   }
 }
 
