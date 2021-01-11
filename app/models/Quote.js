@@ -3,7 +3,7 @@ export default class Quote {
     this.quoteId = data.quote.id
     this.author = data.quote.author
     this.body = data.quote.body
-    console.log(data)
+
   }
 
   get Template() {

@@ -1,4 +1,4 @@
-# Inspire
+ # Inspire
 <div class="text-center">
     <img class="img-responsive" src="/inspire.png"/>
 </div>
