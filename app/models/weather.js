@@ -22,12 +22,40 @@ export default class Weather {
   // FIXME add toggle to button
   get Template() {
     return `
-    <p>${this.city}: ${this.far} &#176<button onclick="">Toggle Temperature type</button></p>
+    <p>${this.city}: ${this.far} &#176<button onclick="toggleFC()">Toggle Temperature type</button></p>
     `
+
   }
 
 
+
+
+
+
+  //   // FIXME add toggle to button
+  //   get Template() {
+  //     let template = ''
+  //     template += `
+
+  //       <p>${this.city}: ${`
+
+
+  //      function() {
+
+  //        if(this.far !== this.celsius){
+  //          this.far = this.celsius
+  //        }
+  //      } else{ this.far =
+
+  //      }
+
+
+  //       template += `}&#176<button onclick="toggleFC()">Toggle Temperature type</button></p>
+  //     `
+
+
+  //     return template
+  //   }
+
+
 }
-
-
-

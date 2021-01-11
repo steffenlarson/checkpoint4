@@ -10,6 +10,16 @@ class WeatherService {
     let res = await api.get('weather');
     ProxyState.weather = new Weather(res.data);
   }
+
+  toggleFC() {
+
+  }
+}
+
+if (condition) {
+
+} else {
+
 }
 
 const weatherService = new WeatherService();
