@@ -3,7 +3,6 @@ import QuoteController from "./Controllers/QuoteController.js";
 import TodoController from "./Controllers/TodoController.js";
 import WeatherController from "./Controllers/WeatherController.js";
 
-// setInterval(drawClock(), 60000)
 
 //TODO Dont forget to register all your controllers	
 class App {
@@ -12,6 +11,7 @@ class App {
     this.todoController = new TodoController();
     this.imageController = new ImageController();
     this.quoteController = new QuoteController();
+    // this.clockController = new 
 
   }
 }
@@ -21,5 +21,3 @@ window["app"] = new App();
 
 
 
-
-// startInterval()

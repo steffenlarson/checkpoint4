@@ -11,9 +11,9 @@ class WeatherService {
     ProxyState.weather = new Weather(res.data);
   }
 
-  toggleFC() {
+  // toggleFC() {
 
-  }
+  // }
 }
 
 

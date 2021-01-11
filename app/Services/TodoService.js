@@ -30,11 +30,11 @@ class TodoService {
     //TODO Make sure that you found a todo, DONE
     //		and if you did find one DONE
     //		change its completed status to whatever it is not (ex: false => true or true => false) DONE
-    if (todo.completed == false) {
-      todo.completed = true
-    } else if (todo.completed == true) {
-      todo.completed = false
-    }
+    // if (todo.completed == false) {
+    //   todo.completed = true
+    // } else if (todo.completed == true) {
+    //   todo.completed = false
+    // }
     console.log(todo.completed)
     // NOTE trying to tie the .completed attribute to the checkbox.
     // if (todo.completed == false) {

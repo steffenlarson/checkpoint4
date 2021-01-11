@@ -11,7 +11,7 @@ export default class Weather {
     this.kelvin = data.main.temp
     this.far = Math.floor(((data.main.temp) - 273.15) * 9 / 5 + 32) + 'F'
     this.celsius = Math.floor((data.main.temp) - 273.15) + 'C'
-
+    this.display = 'true'
 
     // console.log(this.far)
     // console.log(this.celsius)
@@ -22,7 +22,7 @@ export default class Weather {
   // FIXME add toggle to button
   get Template() {
     return `
-    <p>${this.city}: ${this.far} &#176<button onclick="toggleFC()">Toggle Temperature type</button></p>
+    <p>${this.city}: ${this.display} == 'true' ? ${this.far} : ${this.celsius} &#176<button onclick="">Toggle Temperature type</button></p>
     `
 
   }
@@ -32,30 +32,30 @@ export default class Weather {
 
 
 
-  //   // FIXME add toggle to button
-  //   get Template() {
-  //     let template = ''
-  //     template += `
+  // // FIXME add toggle to button
+  // get Template() {
+  //   let template = ''
+  //   template += `
 
-  //       <p>${this.city}: ${`
+  //     <p>${this.city}: ${`
 
 
-  //      function() {
+  //    function() {
 
-  //        if(this.far !== this.celsius){
-  //          this.far = this.celsius
-  //        }
-  //      } else{ this.far =
-
+  //      if(this.far !== this.celsius){
+  //        this.far = this.celsius
   //      }
+  //    } else{ this.far =
+
+  //    }
 
 
-  //       template += `}&#176<button onclick="toggleFC()">Toggle Temperature type</button></p>
-  //     `
+  //     template += `}&#176<button onclick="toggleFC()">Toggle Temperature type</button></p>
+  //   `
 
 
-  //     return template
-  //   }
+  //   return template
+  // }
 
 
 }
