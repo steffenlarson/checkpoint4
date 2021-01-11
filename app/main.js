@@ -3,7 +3,7 @@ import QuoteController from "./Controllers/QuoteController.js";
 import TodoController from "./Controllers/TodoController.js";
 import WeatherController from "./Controllers/WeatherController.js";
 
-setInterval(drawClock(), 60000)
+// setInterval(drawClock(), 60000)
 
 //TODO Dont forget to register all your controllers	
 class App {
@@ -22,4 +22,4 @@ window["app"] = new App();
 
 
 
-startInterval()
+// startInterval()
