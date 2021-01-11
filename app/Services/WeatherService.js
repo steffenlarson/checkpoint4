@@ -16,11 +16,6 @@ class WeatherService {
   }
 }
 
-if (condition) {
-
-} else {
-
-}
 
 const weatherService = new WeatherService();
 export default weatherService;
