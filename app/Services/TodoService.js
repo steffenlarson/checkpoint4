@@ -48,7 +48,7 @@ class TodoService {
     //TODO how do you trigger this change
     // ProxyState.todos = temp
 
-    // this.getTodos()
+    this.getTodos()
 
   }
 

@@ -9,7 +9,7 @@ export default class Todo {
 
 
   get Template() {
-    if (this.completed == 'false') {
+    if (!this.completed) {
       return `
     <li><input type="checkbox" onchange="app.todoController.toggleTodoStatus('${this.id}')"> ${this.description} <button class="btn btn-danger" onclick="app.todoController.removeTodo('${this.id}')">delete</button></li>
     `

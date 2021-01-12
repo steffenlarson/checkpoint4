@@ -10,12 +10,12 @@ function _drawTodos() {
 
   todos.forEach(todo => {
     template += todo.Template
-    if (todo.completed == true) {
+    if (todo.completed !== true) {
       count++
     }
   })
   document.getElementById('todo-list').innerHTML = template
-  document.getElementById('count').innerHTML = count
+  document.getElementById('count').innerHTML = `${count}`
 }
 
 export default class TodoController {
@@ -73,13 +73,5 @@ export default class TodoController {
     }
   }
 
-  countTodo() {
-    let count = 0
-    ProxyState.todos.forEach(todo => {
-      if (todo.completed == true) {
-        count++
-      }
-    });
 
-  }
 }
