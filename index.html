@@ -20,7 +20,9 @@
             <div class="row justify-content-center m-3">
               <div class="col-4">
 
-                <div class="text-center m-5">
+
+
+                <div class="text-center m-5 text-white">
                   <h2>Weather:</h2>
                   <div id="weather">
                   </div>
@@ -43,6 +45,8 @@
                     <form onsubmit="app.todoController.addTodo()">
                       <input type="text" id="description" required><button type="submit">add</button>
                     </form>
+                    <p>Tasks remaining:</p>
+                    <p id="count"></p>
                   </div>
                 </div>
               </div>

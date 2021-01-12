@@ -11,7 +11,7 @@ export default class Weather {
     this.kelvin = data.main.temp
     this.far = Math.floor(((data.main.temp) - 273.15) * 9 / 5 + 32) + 'F'
     this.celsius = Math.floor((data.main.temp) - 273.15) + 'C'
-    this.display = 'true'
+    this.displayF = true
 
     // console.log(this.far)
     // console.log(this.celsius)
@@ -22,7 +22,11 @@ export default class Weather {
   // FIXME add toggle to button
   get Template() {
     return `
-    <p>${this.city}: ${this.display} == 'true' ? ${this.far} : ${this.celsius} &#176<button onclick="">Toggle Temperature type</button></p>
+    <p>${this.city}: 
+
+    ${(this.displayF == true) ? this.far : this.celsius}
+
+     &#176<button onclick="app.weatherController.toggleFC()">Toggle</button></p>
     `
 
   }
@@ -32,30 +36,8 @@ export default class Weather {
 
 
 
-  // // FIXME add toggle to button
-  // get Template() {
-  //   let template = ''
-  //   template += `
 
-  //     <p>${this.city}: ${`
-
-
-  //    function() {
-
-  //      if(this.far !== this.celsius){
-  //        this.far = this.celsius
-  //      }
-  //    } else{ this.far =
-
-  //    }
-
-
-  //     template += `}&#176<button onclick="toggleFC()">Toggle Temperature type</button></p>
-  //   `
-
-
-  //   return template
-  // }
-
-
+  // <p>${this.city}: `;
+  //     var = (${this.displayF} == {this.far}) ?${this.celsius} : ${this.far};
+  //     ` &#176<button onclick="">Toggle Temperature type</button></p>
 }

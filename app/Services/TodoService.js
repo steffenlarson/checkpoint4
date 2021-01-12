@@ -25,17 +25,19 @@ class TodoService {
   }
 
   async toggleTodoStatus(todoId) {
-    let temp = ProxyState.todos
+    // let temp = ProxyState.todos
     let todo = await ProxyState.todos.find(todo => todo.id == todoId);
     //TODO Make sure that you found a todo, DONE
     //		and if you did find one DONE
     //		change its completed status to whatever it is not (ex: false => true or true => false) DONE
-    // if (todo.completed == false) {
-    //   todo.completed = true
-    // } else if (todo.completed == true) {
-    //   todo.completed = false
-    // }
+
+    if (todo.completed == false) {
+      todo.completed = true
+    } else {
+      todo.completed = false
+    }
     console.log(todo.completed)
+    console.log(ProxyState.todos)
     // NOTE trying to tie the .completed attribute to the checkbox.
     // if (todo.completed == false) {
 
@@ -44,7 +46,7 @@ class TodoService {
 
     let res = await api.put(url + todoId, todo);
     //TODO how do you trigger this change
-    ProxyState.todos = temp
+    // ProxyState.todos = temp
 
     // this.getTodos()
 
@@ -58,6 +60,17 @@ class TodoService {
 
     ProxyState.todos = ProxyState.todos.filter(todo => todo.id != todoId)
   }
+
+  // checkTodo() {
+
+  //   let count = 0
+  //   ProxyState.todos.forEach(todo => {
+
+  //   });
+  // }
+
+
+
 }
 
 const todoService = new TodoService();

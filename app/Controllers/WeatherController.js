@@ -27,4 +27,12 @@ export default class WeatherController {
       console.error(e)
     }
   }
+
+  toggleFC() {
+    try {
+      weatherService.toggleFC()
+    } catch (error) {
+      console.error(error)
+    }
+  }
 }

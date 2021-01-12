@@ -11,9 +11,16 @@ class WeatherService {
     ProxyState.weather = new Weather(res.data);
   }
 
-  // toggleFC() {
-
-  // }
+  toggleFC() {
+    let displayF = ProxyState.weather.displayF
+    // debugger
+    if (displayF == true) {
+      ProxyState.weather.displayF = false
+    } else if (displayF == false) {
+      ProxyState.weather.displayF = true
+    }
+    ProxyState.weather = ProxyState.weather
+  }
 }
 
 

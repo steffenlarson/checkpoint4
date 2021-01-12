@@ -6,10 +6,16 @@ function _drawTodos() {
 
   let todos = ProxyState.todos
   let template = ''
+  let count = 0
+
   todos.forEach(todo => {
     template += todo.Template
+    if (todo.completed == true) {
+      count++
+    }
   })
   document.getElementById('todo-list').innerHTML = template
+  document.getElementById('count').innerHTML = count
 }
 
 export default class TodoController {
@@ -65,5 +71,15 @@ export default class TodoController {
     } catch (error) {
       console.error(error)
     }
+  }
+
+  countTodo() {
+    let count = 0
+    ProxyState.todos.forEach(todo => {
+      if (todo.completed == true) {
+        count++
+      }
+    });
+
   }
 }

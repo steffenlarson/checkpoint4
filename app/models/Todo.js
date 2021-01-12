@@ -3,7 +3,10 @@ export default class Todo {
     this.id = id;
     this.completed = completed
     this.description = description
+    this.count = 0
   }
+
+
 
   get Template() {
     if (this.completed == 'false') {
