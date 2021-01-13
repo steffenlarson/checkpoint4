@@ -17,9 +17,7 @@ export default class Weather {
     // console.log(this.celsius)
   }
 
-
-
-  // FIXME add toggle to button
+  // REVIEW go over why this works again. Let me explain to see if I am right.
   get Template() {
     return `
     <p>${this.city}: 

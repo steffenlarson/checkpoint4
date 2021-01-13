@@ -11,9 +11,10 @@ class WeatherService {
     ProxyState.weather = new Weather(res.data);
   }
 
+  // REVIEW Let me explain what is going on quickly if time. I think I know I just want to make sure.
   toggleFC() {
     let displayF = ProxyState.weather.displayF
-    // debugger
+
     if (displayF == true) {
       ProxyState.weather.displayF = false
     } else if (displayF == false) {
