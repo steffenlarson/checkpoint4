@@ -6,6 +6,8 @@ import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 
 // TODO you will want to add all your other data to the AppState
+
+// REVIEW why are the weather, image and quote all registered as null?
 class AppState extends EventEmitter {
   /** @type {Todo[]} */
   todos = []

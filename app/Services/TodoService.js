@@ -7,6 +7,7 @@ let url = 'SteffenLarson/todos/'
 
 
 class TodoService {
+
   async getTodos() {
     let res = await api.get(url);
 
@@ -24,6 +25,8 @@ class TodoService {
 
   }
 
+  // REVIEW I do not understand how the put method works. Please help. I get the todo by finiding it by the id, and then because it is a toggle, that is all that is changing.
+  // REVIEW functionality before the change request. Which is line 46?
   async toggleTodoStatus(todoId) {
     // let temp = ProxyState.todos
     let todo = await ProxyState.todos.find(todo => todo.id == todoId);
@@ -31,18 +34,14 @@ class TodoService {
     //		and if you did find one DONE
     //		change its completed status to whatever it is not (ex: false => true or true => false) DONE
 
+    // NOTE this toggles the todo. This whole function is a put function. But it is a toggle change not a full complete change.
     if (todo.completed == false) {
       todo.completed = true
     } else {
       todo.completed = false
     }
-    console.log(todo.completed)
-    console.log(ProxyState.todos)
-    // NOTE trying to tie the .completed attribute to the checkbox.
-    // if (todo.completed == false) {
-
-    // }
-
+    // console.log(todo.completed)
+    // console.log(ProxyState.todos)
 
     let res = await api.put(url + todoId, todo);
     //TODO how do you trigger this change
@@ -51,7 +50,7 @@ class TodoService {
     this.getTodos()
 
   }
-
+  // REVIEW I am confused as to how the delete works if the res variable is not being used?
   async removeTodo(todoId) {
     //TODO Work through this one on your own DONE
     //		what is the request type DONE
@@ -69,7 +68,7 @@ class TodoService {
   //   });
   // }
 
-
+  // NOTE url variable is what is being placed into thes functions. That is what is getting appended onto the end of the url. then with the IDs we add them too to get the one we want.
 
 }
 

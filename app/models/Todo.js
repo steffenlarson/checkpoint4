@@ -7,15 +7,17 @@ export default class Todo {
   }
 
 
-
+  // REVIEW why does the !this.completed just run? what is it really saying?
   get Template() {
     if (!this.completed) {
       return `
-    <li><input type="checkbox" onchange="app.todoController.toggleTodoStatus('${this.id}')"> ${this.description} <button class="btn btn-danger" onclick="app.todoController.removeTodo('${this.id}')">delete</button></li>
+    <li><input type="checkbox" onchange="app.todoController.toggleTodoStatus('${this.id}')">
+     ${this.description} <button class="btn btn-danger" onclick="app.todoController.removeTodo('${this.id}')">delete</button></li>
     `
     } else {
       return `
-    <li><input type="checkbox" checked onchange="app.todoController.toggleTodoStatus('${this.id}')"> ${this.description} <button class="btn btn-danger" onclick="app.todoController.removeTodo('${this.id}')">delete</button></li>
+    <li><input type="checkbox" checked onchange="app.todoController.toggleTodoStatus('${this.id}')">
+     ${this.description} <button class="btn btn-danger" onclick="app.todoController.removeTodo('${this.id}')">delete</button></li>
     `
     }
 
@@ -29,18 +31,3 @@ export default class Todo {
 
 
 
-
-
-//  "Todo": {
-// "completed": {
-//   "type": "Boolean",
-//     "required": true,
-//       "default": false
-// },
-// "description": {
-//   "type": "String",
-//     "required": true
-// },
-// "user": {
-//   "type": "String",
-//     "required": true

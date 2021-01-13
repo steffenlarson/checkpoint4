@@ -2,12 +2,13 @@ import { ProxyState } from "../AppState.js";
 import todoService from "../Services/TodoService.js";
 
 //TODO Create the draw function
+
 function _drawTodos() {
 
   let todos = ProxyState.todos
   let template = ''
   let count = 0
-
+  // REVIEW we can put multiple things into a for each line? to do multiple things that are mostly unrelated?
   todos.forEach(todo => {
     template += todo.Template
     if (todo.completed !== true) {
@@ -17,6 +18,9 @@ function _drawTodos() {
   document.getElementById('todo-list').innerHTML = template
   document.getElementById('count').innerHTML = `${count}`
 }
+
+
+// NOTE Controllers only ever pass data back and forth. Or draw things. Render things to the page.
 
 export default class TodoController {
   constructor() {
@@ -33,6 +37,7 @@ export default class TodoController {
     }
   }
   addTodo() {
+    // REVIEW I also still do not quite understand the form stuff. the prevent default and the window.event.target
     window.event.preventDefault();
     var form = window.event.target;
 
